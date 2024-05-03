@@ -4,7 +4,8 @@
   "description": "Simple compound interest calculator",
   "main": "server.js",
   "scripts": {
-    "start": "node server.js"
+    "start": "node server.js",
+    "build": "webpack --mode production"
   },
   "author": "Your Name",
   "license": "MIT",
