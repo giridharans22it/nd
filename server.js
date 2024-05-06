@@ -4,8 +4,10 @@ const querystring = require('querystring');
 
 const app = express();
 const port = process.env.PORT || 5000;
-
-app.get('/', (req, res) => {
+app.get('/',(req,res)=>{
+    res.sendFile('index.html');
+});
+app.get('/calc', (req, res) => {
     const query = url.parse(req.url).query;
     const params = querystring.parse(query);
 
