@@ -5,7 +5,7 @@ const querystring = require('querystring');
 const app = express();
 const port = process.env.PORT || 5000;
 app.get('/',(req,res)=>{
-    const filePath = './index.html'; 
+    const filePath = path.join(__dirname,'index.html'); 
   res.sendFile(filePath, (err) => {
     if (err) {
       console.error('Error sending file:', err);
