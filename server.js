@@ -5,7 +5,15 @@ const querystring = require('querystring');
 const app = express();
 const port = process.env.PORT || 5000;
 app.get('/',(req,res)=>{
-    res.sendFile('index.html');
+    const filePath = './index.html'; 
+  res.sendFile(filePath, (err) => {
+    if (err) {
+      console.error('Error sending file:', err);
+      res.status(err.status).end();
+    } else {
+      console.log('File sent successfully');
+    }
+  });
 });
 app.get('/calc', (req, res) => {
     const query = url.parse(req.url).query;
